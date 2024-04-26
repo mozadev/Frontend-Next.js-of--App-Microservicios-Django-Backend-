@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
-import { createWrapper } from 'next-redux-wrapper';
+import { createWrapper } from 'next-redux-wrapper';  // to SEO doesn't break up when using Next.js
 import rootReducer from './reducers';
 
 const persistConfig = {
@@ -16,7 +16,7 @@ const makeStore = () => {
     const store = configureStore({
         reducer: persistedReducer,
         middleware: [thunk],
-        devTools: process.env.NODE_ENV !== 'production',
+        devTools: process.env.NODE_ENV !== 'production', // Enable Redux DevTools in development mode only 
     });
 
     const persistor = persistStore(store);
