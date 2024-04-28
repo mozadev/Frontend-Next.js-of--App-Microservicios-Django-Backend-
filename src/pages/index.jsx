@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Layout from '@/hocs/Layout';
-import Header from './components/Header';
-import Features from './components/Features';
-import Roadmap from './components/Roadmap';
+//import Header from './components/Header';
+//import Features from './components/Features';
+//import Roadmap from './components/Roadmap';
 
 const SeoList = {
     title: 'blog.webmoza - Desarrollo de paginas web',
@@ -68,9 +68,9 @@ export default function Home() {
                 <meta name="twitter:player:stream" content={SeoList.video} />
             </Head>
             <div className="dark:bg-dark-bg">
-                <Header />
-                <Features />
-                <Roadmap />
+                {/* <Header /> */}
+                {/* <Features />
+                <Roadmap /> */}
             </div>
         </>
     );

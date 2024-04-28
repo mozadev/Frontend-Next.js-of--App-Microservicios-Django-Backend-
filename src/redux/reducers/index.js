@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import cookies from '../actions/cookies/cookies';
+import cookies from './cookies';
 
 export default combineReducers({
     cookies,
