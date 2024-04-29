@@ -23,6 +23,7 @@ const SeoList = {
 };
 
 export default function Home() {
+
     // return (
     //     <>
     //         <Head>
