@@ -2,12 +2,13 @@ import Head from 'next/head';
 import Layout from '@/hocs/Layout';
 
 const SeoList = {
-    title: 'Nuestros casos - Proyectos de software de éxito de nuestra empresa de marketing',
+    title: 'Nuestros servicios - Servicios de marketing y desarrollo de software de webmoza',
     description:
-        'Descubra nuestra cartera de proyectos de software de éxito, que demuestran nuestra experiencia en marketing y desarrollo de software. Descubra cómo ayudamos a nuestros clientes a alcanzar sus objetivos con soluciones innovadoras.',
-    href: '/cases',
-    url: 'https://webmoza.com',
-    keywords: 'marketing de software, desarrollo de software, soluciones de software',
+        'Conozca los servicios que ofrecemos en webmoza, especializados en marketing y desarrollo de software. Ayudamos a nuestros clientes a lograr sus objetivos mediante soluciones innovadoras y personalizadas.',
+    href: '/services',
+    url: 'https://webmoza.com/services',
+    keywords:
+        'marketing de software, desarrollo de software, servicios, soluciones innovadoras, servicios personalizados',
     robots: 'all',
     author: 'webmoza',
     publisher: 'webmoza',
@@ -18,7 +19,7 @@ const SeoList = {
     twitterHandle: '@webmoza_',
 };
 
-export default function Cases() {
+export default function Services() {
     return (
         <>
             <Head>
@@ -64,12 +65,12 @@ export default function Cases() {
                 <meta name="twitter:player:stream" content={SeoList.video} />
             </Head>
             <div className="dark:bg-dark-bg">
-                <p className="dark:text-dark-txt">Cases page</p>
+                <p className="dark:text-dark-txt">Services page</p>
             </div>
         </>
     );
 }
 
-Cases.getLayout = function getLayout(page) {
+Services.getLayout = function getLayout(page) {
     return <Layout>{page}</Layout>;
 };
