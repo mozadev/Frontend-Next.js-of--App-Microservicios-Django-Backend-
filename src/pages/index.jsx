@@ -68,7 +68,7 @@ export default function Home() {
                 <meta name="twitter:player:height" content="720" />
                 <meta name="twitter:player:stream" content={SeoList.video} />
             </Head>
-            <div>Home Page</div>;
+            <div>Home Page</div>
 
         </>
     );

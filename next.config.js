@@ -16,6 +16,7 @@ const nextConfig = {
             'images.unsplash.com',
             'tailwindui.com',
             'bafybeicgamofiuvkc6wjxl4wwzzh6pdovhcvvyc2gw5verruiolnykzz3i.ipfs.w3s.link',
+            'tailwindui.com'
         ],
     },
 };
