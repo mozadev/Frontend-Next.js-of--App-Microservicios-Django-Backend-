@@ -1,41 +1,55 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+
 const navigation = {
     solutions: [
-        { name: 'Marketing', href: '#' },
-        { name: 'Analytics', href: '#' },
-        { name: 'Commerce', href: '#' },
-        { name: 'Insights', href: '#' },
+        {
+            name: 'Consultoría y desarrollo de blockchain',
+            href: '/services/blockchain_development',
+            price: 5000,
+        },
+        {
+            name: 'Desarrollo de microservicios con Django Rest Framework',
+            href: '/services/backend_development',
+            price: 4000,
+        },
+        { name: 'Desarrollo web con React y Next.js', href: '/services/web_development', price: 3500 },
+        {
+            name: 'Desarrollo de plataformas de comercio electrónico',
+            href: '/services/ecommerce',
+            price: 4500,
+        },
+        {
+            name: 'Desarrollo de software a medida',
+            href: '/services/software_development',
+            price: 5000,
+        },
+        {
+            name: 'Consultoría y soluciones de criptomoneda',
+            href: '/services/cryptocurrency',
+            price: 6000,
+        },
     ],
     support: [
-        { name: 'Pricing', href: '#' },
-        { name: 'Documentation', href: '#' },
-        { name: 'Guides', href: '#' },
-        { name: 'API Status', href: '#' },
+        { name: 'Blog', href: '/blog' },
+        { name: 'Podcast', href: '/podcast' },
+        { name: 'Videos', href: '/videos' },
+        { name: 'Discord', href: '/discord' },
+        { name: 'Redes Sociales', href: '/social' },
+        { name: 'Ayuda', href: '/help' },
     ],
     company: [
-        { name: 'About', href: '#' },
-        { name: 'Blog', href: '#' },
-        { name: 'Jobs', href: '#' },
-        { name: 'Press', href: '#' },
-        { name: 'Partners', href: '#' },
+        { name: 'Casos de Estudio', href: '/cases' },
+        { name: 'Sobre Nosotros', href: '/about' },
+        { name: 'Contactanos', href: '/contact' },
+        { name: 'Carreras', href: '/careers' },
+        { name: 'Partners', href: '/partners' },
+        { name: 'Prensa y Medios de Comunicacion', href: '/press' },
     ],
     legal: [
-        { name: 'Claim', href: '#' },
-        { name: 'Privacy', href: '#' },
-        { name: 'Terms', href: '#' },
+        { name: 'Derechos de Autor', href: '#' },
+        { name: 'Privacidad', href: '/privacy' },
+        { name: 'Terminos y Condiciones', href: '/terms' },
     ],
     social: [
         {
@@ -102,9 +116,10 @@ const navigation = {
     ],
 };
 
-export default function Example() {
+export default function Footer() {
+    const router = useRouter();
     return (
-        <footer className="bg-white" aria-labelledby="footer-heading">
+        <footer className="bg-white dark:bg-dark-bg" aria-labelledby="footer-heading">
             <h2 id="footer-heading" className="sr-only">
                 Footer
             </h2>
@@ -113,31 +128,41 @@ export default function Example() {
                     <div className="grid grid-cols-2 gap-8 xl:col-span-2">
                         <div className="md:grid md:grid-cols-2 md:gap-8">
                             <div>
-                                <h3 className="text-sm font-semibold leading-6 text-gray-900">Solutions</h3>
-                                <ul role="list" className="mt-6 space-y-4">
+                                <h3 className="text-sm font-semibold leading-6 dark:text-dark-txt text-gray-900">
+                                    Soluciones
+                                </h3>
+                                <ul className="mt-6 space-y-4">
                                     {navigation.solutions.map((item) => (
                                         <li key={item.name}>
-                                            <a
+                                            <Link
                                                 href={item.href}
-                                                className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                                                className={`text-sm leading-6 ${router.pathname === item.href
+                                                        ? 'text-dark dark:text-dark-txt font-semibold'
+                                                        : 'text-gray-400 dark:text-dark-txt-secondary'
+                                                    } hover:text-dark`}
                                             >
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
                             <div className="mt-10 md:mt-0">
-                                <h3 className="text-sm font-semibold leading-6 text-gray-900">Support</h3>
-                                <ul role="list" className="mt-6 space-y-4">
-                                    {navigation.support.map((item) => (
+                                <h3 className="text-sm font-semibold leading-6 dark:text-dark-txt text-gray-900">
+                                    Empresa
+                                </h3>
+                                <ul className="mt-6 space-y-4">
+                                    {navigation.company.map((item) => (
                                         <li key={item.name}>
-                                            <a
+                                            <Link
                                                 href={item.href}
-                                                className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                                                className={`text-sm leading-6 ${router.pathname === item.href
+                                                        ? 'text-dark dark:text-dark-txt font-semibold'
+                                                        : 'text-gray-400 dark:text-dark-txt-secondary'
+                                                    } hover:text-dark`}
                                             >
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -145,31 +170,41 @@ export default function Example() {
                         </div>
                         <div className="md:grid md:grid-cols-2 md:gap-8">
                             <div>
-                                <h3 className="text-sm font-semibold leading-6 text-gray-900">Company</h3>
-                                <ul role="list" className="mt-6 space-y-4">
-                                    {navigation.company.map((item) => (
+                                <h3 className="text-sm font-semibold leading-6 dark:text-dark-txt text-gray-900">
+                                    Contenido
+                                </h3>
+                                <ul className="mt-6 space-y-4">
+                                    {navigation.support.map((item) => (
                                         <li key={item.name}>
-                                            <a
+                                            <Link
                                                 href={item.href}
-                                                className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                                                className={`text-sm leading-6 ${router.pathname === item.href
+                                                        ? 'text-dark dark:text-dark-txt font-semibold'
+                                                        : 'text-gray-400 dark:text-dark-txt-secondary'
+                                                    } hover:text-dark`}
                                             >
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
                             <div className="mt-10 md:mt-0">
-                                <h3 className="text-sm font-semibold leading-6 text-gray-900">Legal</h3>
-                                <ul role="list" className="mt-6 space-y-4">
+                                <h3 className="text-sm font-semibold leading-6 dark:text-dark-txt text-gray-900">
+                                    Legal
+                                </h3>
+                                <ul className="mt-6 space-y-4">
                                     {navigation.legal.map((item) => (
                                         <li key={item.name}>
-                                            <a
+                                            <Link
                                                 href={item.href}
-                                                className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                                                className={`text-sm leading-6 ${router.pathname === item.href
+                                                        ? 'text-dark dark:text-dark-txt font-semibold'
+                                                        : 'text-gray-400 dark:text-dark-txt-secondary'
+                                                    } hover:text-dark`}
                                             >
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -177,47 +212,35 @@ export default function Example() {
                         </div>
                     </div>
                     <div className="mt-10 xl:mt-0">
-                        <h3 className="text-sm font-semibold leading-6 text-gray-900">
-                            Subscribe to our newsletter
+                        <h3 className="text-sm font-semibold leading-6 dark:text-dark-txt text-gray-900">
+                            Recibe noticias y regalos!
                         </h3>
-                        <p className="mt-2 text-sm leading-6 text-gray-600">
-                            The latest news, articles, and resources, sent to your inbox weekly.
+                        <p className="mt-2 text-sm leading-6 dark:text-dark-txt-secondary  text-gray-600">
+                            Noticias, descuentos y mensajes importantes sobre lo que mas te gusta.
                         </p>
                         <form className="mt-6 sm:flex sm:max-w-md">
-                            <label htmlFor="email-address" className="sr-only">
-                                Email address
-                            </label>
                             <input
-                                type="email"
-                                name="email-address"
-                                id="email-address"
-                                autoComplete="email"
-                                required
-                                className="w-full min-w-0 appearance-none rounded-md border-0 bg-white px-3 py-1.5 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:w-64 sm:text-sm sm:leading-6 xl:w-full"
-                                placeholder="Enter your email"
+                                className="w-full sm:w-auto sm:flex-grow rounded-md dark:bg-dark-bg px-4 py-2 text-md text-gray-900 dark:text-dark-txt placeholder-gray-400 dark:placeholder-dark-txt focus:outline-none focus:ring-none transition duration-300 ease-in-out focus:ring-yellow-200 dark:focus:ring-dark-primary border shadow-neubrutalism-xs  dark:border-dark-border mb-2 sm:mb-0 "
+                                type="text"
+                                placeholder="Correo Electronico"
                             />
-                            <div className="mt-4 sm:ml-4 sm:mt-0 sm:flex-shrink-0">
-                                <button
-                                    type="submit"
-                                    className="flex w-full items-center justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                                >
-                                    Subscribe
-                                </button>
-                            </div>
+                            <button className="w-full sm:w-auto sm:ml-4 rounded-md px-4 py-2 font-bold text-dark border-2 border-cyan-600 dark:border-cyan-600 hover:border-cyan-700 dark:hover:border-cyan-600 focus:outline-none focus:border-cyan-700 dark:focus:border-cyan-600 bg-opacity-20 hover:bg-opacity-30 dark:text-white dark:bg-dark-main dark:hover:bg-opacity-40">
+                                Suscribirme
+                            </button>
                         </form>
                     </div>
                 </div>
                 <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 md:flex md:items-center md:justify-between lg:mt-24">
                     <div className="flex space-x-6 md:order-2">
                         {navigation.social.map((item) => (
-                            <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
+                            <Link key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
                                 <span className="sr-only">{item.name}</span>
                                 <item.icon className="h-6 w-6" aria-hidden="true" />
-                            </a>
+                            </Link>
                         ))}
                     </div>
-                    <p className="mt-8 text-xs leading-5 text-gray-500 md:order-1 md:mt-0">
-                        &copy; 2020 Your Company, Inc. All rights reserved.
+                    <p className="mt-8 text-xs leading-5 dark:text-dark-txt text-gray-500 md:order-1 md:mt-0">
+                        &copy; 2023 webmoza, DAO. All rights reserved.
                     </p>
                 </div>
             </div>
