@@ -1,3 +1,4 @@
+
 import StandardPagination from '@/components/pagination/StandardPagination';
 import BlogCardHorizontal from './BlogCardHorizontal';
 
