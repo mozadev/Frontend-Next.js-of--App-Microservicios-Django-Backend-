@@ -1,4 +1,4 @@
-import StandardPagination from './components/pagination/StandardPagination';
+import StandardPagination from '@/components/pagination/StandardPagination';
 import BlogCardHorizontal from './BlogCardHorizontal';
 
 export default function BlogList({ posts, count, pageSize, currentPage, setCurrentPage }) {
