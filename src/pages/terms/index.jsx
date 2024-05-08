@@ -49,7 +49,7 @@ export default function Terms() {
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:site" content={SeoList.twitterHandle} />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/logo.svg" />
             </Head>
             <div>Terms page</div>
             <div className="pb-32" />

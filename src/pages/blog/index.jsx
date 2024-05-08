@@ -24,6 +24,7 @@ const SeoList = {
 
 export default function Blog() {
     const [posts, setPosts] = useState([]);
+    console.log(posts);
     const [count, setCount] = useState([]);
     const [pageSize, setPageSize] = useState(12);
     const [currentPage, setCurrentPage] = useState(1);
@@ -78,7 +79,7 @@ export default function Blog() {
                 <meta name="author" content={SeoList.author} />
                 <meta name="publisher" content={SeoList.publisher} />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/logo.svg" />
 
                 {/* Social Media Tags */}
                 <meta property="og:title" content={SeoList.title} />

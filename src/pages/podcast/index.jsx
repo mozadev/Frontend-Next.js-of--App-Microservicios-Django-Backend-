@@ -33,7 +33,7 @@ export default function Podcast() {
                 <meta name="author" content={SeoList.author} />
                 <meta name="publisher" content={SeoList.publisher} />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/logo.svg" />
 
                 {/* Social Media Tags */}
                 <meta property="og:title" content={SeoList.title} />

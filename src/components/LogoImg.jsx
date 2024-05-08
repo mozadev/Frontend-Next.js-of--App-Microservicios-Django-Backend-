@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
 
-const logoList = ['webmoza.png'];
+const logoList = ['logo.svg'];
 
 export default function LogoImg() {
     const [logo, setLogo] = useState(logoList[0]);

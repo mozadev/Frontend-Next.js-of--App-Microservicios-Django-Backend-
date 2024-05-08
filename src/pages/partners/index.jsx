@@ -48,7 +48,7 @@ export default function Partners() {
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:site" content={SeoList.twitterHandle} />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/logo.svg" />
             </Head>
             <Header />
             <div className=" py-24 sm:py-32">
